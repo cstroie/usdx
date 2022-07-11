@@ -2223,9 +2223,17 @@ uint8_t delayWithKeySense(uint32_t ms){
   return 0;
 }
 #ifdef CW_MESSAGE_EXT
-char cw_msg[6][48] = { "CQ PE1NNN +", "CQ CQ DE PE1NNN PE1NNN +", "GE TKS 5NN 5NN NAME IS GUIDO GUIDO HW?", "FB RPTR TX 5W 5W ANT INV V 73 CUAGN", "73 TU E E", "PE1NNN" };
+//char cw_msg[6][48] = { "CQ PE1NNN +", "CQ CQ DE PE1NNN PE1NNN +", "GE TKS 5NN 5NN NAME IS GUIDO GUIDO HW?", "FB RPTR TX 5W 5W ANT INV V 73 CUAGN", "73 TU E E", "PE1NNN"};
+char cw_msg[6][48] = { "CQ CQ CQ DE YO9JAZ YO9JAZ YO9JAZ/QRP K",
+                       "R R GA UR RST 599 5NN NAME COSTIN COSTIN K",
+                       "R QTH TIRGOVISTE TIRGOVISTE LOC KN24rw K",
+                       "TU 73 E E",
+                       "R R GA UR RST 599 5NN 73 E E",
+                       "YO9JAZ"
+                     };
 #else
-char cw_msg[1][48] = { "CQ PE1NNN +" };
+//char cw_msg[1][48] = { "CQ PE1NNN +" };
+char cw_msg[1][48] = { "CQ CQ CQ DE YO9JAZ YO9JAZ YO9JAZ/QRP K" };
 #endif
 uint8_t cw_msg_interval = 5; // number of seconds CW message is repeated
 uint32_t cw_msg_event = 0;
