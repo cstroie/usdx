@@ -1887,7 +1887,7 @@ void set_latch(uint8_t io, uint8_t common_io, bool latch = true){ // reset all l
 static uint8_t prev_lpf_io = 0xff; // inits and resets all latches
 inline void set_lpf(uint8_t f){
 #ifdef LPF_SWITCHING_DL2MAN_USDX_REV3
-  uint8_t lpf_io = (f > 26) ? IO1_3 : (f > 20) ? IO1_4 : (f > 17) ? IO1_2 : (f > 12) ? IO1_5 : (f > 8) ? IO1_1 : (f > 5) ? IO1_6 : (f > 4) ? IO1_0 : /*(f <= 4)*/ IO1_7; // cut-off freq in MHz to IO port of LPF relay
+  uint8_t lpf_io = (f > 24) ? IO1_3 : (f > 20) ? IO1_4 : (f > 17) ? IO1_2 : (f > 12) ? IO1_5 : (f > 8) ? IO1_1 : (f > 5) ? IO1_6 : (f > 4) ? IO1_0 : /*(f <= 4)*/ IO1_7; // cut-off freq in MHz to IO port of LPF relay
 #ifndef LPF_SWITCHING_DL2MAN_USDX_REV3_NOLATCH
   if(prev_lpf_io != lpf_io){ set_latch(prev_lpf_io, IO0_0, false); set_latch(lpf_io, IO0_0); prev_lpf_io = lpf_io; };  // set relay (latched)
 #else
